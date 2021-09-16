@@ -104,7 +104,7 @@ output application/json
       </otherwise>
     </choice>
   </flow>
-  <flow name="Register-User" doc:id="a4556494-0ab5-4782-966c-9f830dbf243b" >
+  <flow name="Register-UserFlow" doc:id="a4556494-0ab5-4782-966c-9f830dbf243b" >
     <http:listener doc:name="Listener" doc:id="2a477ae7-0068-4e47-ba78-be72a5a6eaa0" config-ref="HTTP_Listener_Reg" path="/regapi" allowedMethods="POST"/>
     <ee:transform doc:name="Transform Message" doc:id="44b174ab-ff49-4fa8-9764-52d27c4d76fb" >
       <ee:message >
