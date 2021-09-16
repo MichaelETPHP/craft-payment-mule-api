@@ -27,6 +27,14 @@ if (payload.email != null) payload[0] else {
 		</ee:transform>
 		<error-handler >
 			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="5a772f65-c1f4-4450-9974-e2fbddaf89e5" type="DB:CONNECTIVITY">
+				<ee:transform doc:name="Transform Message" doc:id="41c4f451-c361-4d00-a4c2-75b673e5dde6" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+"Msg" : "Some Mesg."]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
 			</on-error-propagate>
 		</error-handler>
 	</flow>
