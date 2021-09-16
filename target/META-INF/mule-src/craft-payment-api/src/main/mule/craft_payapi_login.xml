@@ -27,7 +27,6 @@ if (payload.email != null) payload[0] else {
 		</ee:transform>
 		<error-handler >
 			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="5a772f65-c1f4-4450-9974-e2fbddaf89e5" type="DB:CONNECTIVITY">
-				<logger level="INFO" doc:name="Logger" doc:id="a22681a5-fb55-4f6b-aa4b-0366126e532a" message="ANY ERROR"/>
 			</on-error-propagate>
 		</error-handler>
 	</flow>
