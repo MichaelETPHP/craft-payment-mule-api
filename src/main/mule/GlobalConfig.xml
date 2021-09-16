@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:email="http://www.mulesoft.org/schema/mule/email"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/email http://www.mulesoft.org/schema/mule/email/current/mule-email.xsd 
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	
+	  <http:listener-config name="HTTP_Listener_Reg" doc:name="HTTP Listener config" doc:id="1e541347-ef61-4d8a-ab39-7f2acda34503" >
+    <http:listener-connection host="0.0.0.0" port="${http.port}" />
+  </http:listener-config>
+  
+  
+    <db:config name="Database_Config_All_in_One" doc:name="Database Config" doc:id="9e0e1dd9-83ec-4063-a1b4-20821efbdee6" >
+    <db:my-sql-connection host="${db.host}" port="${db.port}" user="${db.username}" password="${db.password}" database="${db.database}"/>
+  </db:config>
+  
+  
+    <email:smtp-config name="Email_SMTP_For_Reg" doc:name="Email SMTP" doc:id="d9970fab-2ded-4bff-9ad5-e68b410d3101" >
+    <email:smtp-connection host="smtp.gmail.com" user="amir2mohammed12@gmail.com" password="CraftSoftware@2021" >
+      <email:properties >
+        <email:property key="mail.smtp.starttls.enable" value="true" />
+      </email:properties>
+    </email:smtp-connection>
+  </email:smtp-config>
+  
+  
+  <configuration-properties doc:name="Configuration properties" doc:id="60101499-dacb-49d7-b070-dc9db795d3b3" file="dev.yaml" />
+	
+	
+	<http:request-config name="HTTP_Request_Redirect" doc:name="HTTP Request configuration" doc:id="ca35d566-18b8-4148-bf8f-d6fb66809ca7" >
+		<http:request-connection host="craftpay.addissquare.com" />
+	</http:request-config>
+	
+	</mule>

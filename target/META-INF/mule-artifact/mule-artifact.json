@@ -1,0 +1,30 @@
+{
+  "configs": [
+    "craft_payapi_login.xml",
+    "craft-payment-api.xml",
+    "GlobalConfig.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:craft-payment-api:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "application-types.xml",
+        "craft-payment-api.xml",
+        "craft_payapi_login.xml",
+        "dev.yaml",
+        "GlobalConfig.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
